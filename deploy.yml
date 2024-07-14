@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scrape-book
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scrape-book
+  template:
+    metadata:
+      labels:
+        app: scrape-book
+    spec:
+      containers:
+      - name: scrape-book
+        image: fiddlerbb/scrape_book
+        imagePullPolicy: Always
